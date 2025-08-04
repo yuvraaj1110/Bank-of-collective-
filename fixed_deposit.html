@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Deposit - Bank of Bankuland</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            background: #1e3a8a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 400px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: black;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #1e3a8a;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 8px;
+            border: 1px solid #1e40af;
+            font-size: 1rem;
+        }
+
+        #interestRate {
+            margin-top: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #1e40af;
+        }
+
+        .btn {
+            margin-top: 20px;
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background-color: white;
+            color: #1e40af;
+            border: 2px solid #1e40af;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:hover {
+            background-color: #f8fafc;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ✅ Decorative Diagonal Lines */
+        .diagonal-line, .diagonal-line-2 {
+            position: fixed;
+            bottom: 0;
+            width: 2px;
+            height: 145%;
+            background: white;
+            opacity: 0.8;
+            z-index: -1;
+        }
+        .diagonal-line {
+            left: 0;
+            transform-origin: bottom left;
+            transform: rotate(81deg);
+        }
+        .diagonal-line-2 {
+            right: 0;
+            transform-origin: bottom right;
+            transform: rotate(-81deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏦 Fixed Deposit</h1>
+
+        <form method="POST">
+            <!-- Amount Input -->
+            <label for="amount">💰 Enter Amount</label>
+            <input type="number" name="amount" id="amount" min="1" required>
+
+            <!-- Duration Dropdown -->
+            <label for="duration">📅 Select Duration</label>
+            <select name="duration" id="duration" required onchange="showInterest()">
+                <option value="" disabled selected>-- Choose Years --</option>
+                <option value="5">5 Years</option>
+                <option value="10">10 Years</option>
+                <option value="15">15 Years</option>
+            </select>
+
+            <!-- Interest Rate Display -->
+            <p id="interestRate">📈 Interest Rate: -- %</p>
+
+            <!-- Submit Button -->
+            <button class="btn" type="submit">✅ Create FD</button>
+        </form>
+    </div>
+
+    <!-- Decorative Lines -->
+    <div class="diagonal-line"></div>
+    <div class="diagonal-line-2"></div>
+
+    <!-- ✅ JavaScript to change interest rate dynamically -->
+    <script>
+        function showInterest() {
+            const duration = document.getElementById('duration').value;
+            const interestRate = document.getElementById('interestRate');
+            if (duration == "5") {
+                interestRate.textContent = "📈 Interest Rate: 7%";
+            } else if (duration == "10") {
+                interestRate.textContent = "📈 Interest Rate: 9%";
+            } else if (duration == "15") {
+                interestRate.textContent = "📈 Interest Rate: 12%";
+            } else {
+                interestRate.textContent = "📈 Interest Rate: -- %";
+            }
+        }
+    </script>
+</body>
+</html>

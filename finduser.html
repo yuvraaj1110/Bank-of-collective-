@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find User - Bank of Bankuland</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            background:black;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            text-align: center;
+            width: 100%;
+            max-width: 600px;
+            padding: 40px;
+            margin: 0 auto;
+        }
+
+        .bank-title {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #ffffff;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            margin-top: 20px;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .form-box {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+        }
+
+        label {
+            font-size: 1.2rem;
+            color: #1e40af;
+            font-weight: bold;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            border-radius: 8px;
+            border: 2px solid #1e40af;
+            outline: none;
+            text-align: center;
+        }
+
+        input[type="number"]:focus {
+            border-color: #1e3a8a;
+            box-shadow: 0 0 8px rgba(30, 58, 138, 0.3);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            background-color: white;
+            color: #1e40af;
+            border: 2px solid #1e40af;
+        }
+
+        .btn:hover {
+            background-color: #f8fafc;
+            color: #1e3a8a;
+            border-color: #1e3a8a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .diagonal-line, .diagonal-line-2 {
+            position: absolute;
+            bottom: 0;
+            width: 2px;
+            height: 145%;
+            background: white;
+            opacity: 0.8;
+        }
+        .diagonal-line {
+            left: 0;
+            transform-origin: bottom left;
+            transform: rotate(61deg);
+        }
+        .diagonal-line-2 {
+            right: 0;
+            transform-origin: bottom right;
+            transform: rotate(-61deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="bank-title">🔍 Find User</h1>
+        <div class="form-box">
+            <form method="POST">
+                <label>Enter Receiver ID:</label><br>
+                <input type="number" name="receiver_id" placeholder="Enter ID" required><br>
+                <button class="btn" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Decorative diagonal lines -->
+    <div class="diagonal-line"></div>
+    <div class="diagonal-line-2"></div>
+</body>
+</html>
