@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank of the collective</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            background: black;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            text-align: center;
+            width: 100%;
+            max-width: 600px;
+            padding: 40px;
+            margin: 0 auto;
+        }
+
+        .bank-title {
+            font-size: 4rem;
+            font-weight: 900;
+            color: #ffffff;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            margin-top: 20px;
+            margin-bottom: 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+        }
+
+        .imaginary-line {
+            position: absolute;
+            top: calc(4rem + 20px + 5px);
+            left: 0;
+            right: 0;
+            height: 1px;
+            pointer-events: none;
+        }
+
+        .diagonal-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 2px;
+    height: 145%;
+    background: white;
+    transform-origin: bottom left;
+    transform: rotate(61deg);
+    opacity: 0.8;
+}
+.diagonal-line-2 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 2px;
+    height: 145%;
+    background: white;
+    transform-origin: bottom left;
+    transform: rotate(-61deg);
+    opacity: 0.8;
+}
+        .button-container {
+            display: flex;
+            flex-direction: row;
+            gap: 120px;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .btn {
+            width: 120px;
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            background-color: white;
+            color: #1e40af;
+            border: 2px solid #1e40af;
+        }
+
+        .btn:hover {
+            background-color: #f8fafc;
+            color: #1e3a8a;
+            border-color: #1e3a8a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            margin-bottom: 60px;
+            font-weight: 300;
+        }
+
+        @media (max-width: 768px) {
+            .bank-title {
+                font-size: 2.5rem;
+                margin-bottom: 60px;
+            }
+            
+            .btn {
+                width: 200px;
+                font-size: 1.2rem;
+                padding: 15px 30px;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="bank-title">Bank of Bankuland</h1>
+        <div class="imaginary-line"></div>
+    </div>
+    
+    <div class="diagonal-line"></div>
+    <div class="diagonal-line-2"></div>
+
+    
+    <div class="button-container">
+        <!-- Login button submits form to /login -->
+        <form action="/login" method="get" style="display: inline;">
+          <button class="btn" type="submit">Login</button>
+        </form>
+      
+        <!-- Signup button submits form to /signup -->
+        <form action="/signup" method="get" style="display: inline;">
+          <button class="btn" type="submit">Sign Up</button>
+        </form>
+      </div>
+      
+      
+</body>
+</html>
